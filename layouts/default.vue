@@ -37,36 +37,8 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <div v-if="current_locale === 'zh'">
-        <v-divider />
-        <v-list>
-          <v-list-item
-            v-for="item in external_cn"
-            :key="item.to"
-            dense
-            :href="item.to"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <v-list-item-action>
-              <v-icon>{{ icons[item.icon] }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </div>
       <v-divider />
       <v-list>
-        <v-list-item dense to="/links" router exact>
-          <v-list-item-action>
-            <v-icon>{{ icons.play_list_star }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>{{ $t('site.links') }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
         <v-list-item dense to="/about" router exact>
           <v-list-item-action>
             <v-icon>{{ icons.code_tags }}</v-icon>
@@ -85,7 +57,7 @@
     >
       <v-app-bar-nav-icon class="white--text" @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="$t('site.title') + '(^・ω・^§)ﾉ'" />
-      <v-img src="/img/oruyanke_transparent.png" style="max-width: 24px; margin-left: 6px;" />
+      <v-img src="/img/hanser-yousa.jpg" style="max-width: 24px; margin-left: 6px;" />
       <v-spacer />
       <v-tooltip bottom>
         <template v-slot:activator="{ on }">
@@ -95,29 +67,7 @@
         </template>
         <span>{{ $t('site.switch_dark_mode') }}</span>
       </v-tooltip>
-      <v-menu offset-y>
-        <template v-slot:activator="{ on: menu }">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on: tooltip }">
-              <v-btn icon class="white--text" v-on="{ ...tooltip, ...menu }">
-                <v-icon>{{ icons.translate }}</v-icon>
-              </v-btn>
-            </template>
-            <span>{{ $t('site.switch_language') }}</span>
-          </v-tooltip>
-        </template>
-        <v-list>
-          <v-list-item id="lang-switch-zh" @click="switch_lang('zh')">
-            <v-list-item-title>简体中文</v-list-item-title>
-          </v-list-item>
-          <v-list-item id="lang-switch-ja" @click="switch_lang('ja')">
-            <v-list-item-title>日本語</v-list-item-title>
-          </v-list-item>
-          <v-list-item id="lang-switch-en" @click="switch_lang('en')">
-            <v-list-item-title>English</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+      <!-- done: 删除了翻译按钮-->
     </v-app-bar>
     <v-main>
       <v-container class="page">
@@ -128,19 +78,13 @@
           <div style="vertical-align: middle;">
             <span>&copy; {{ new Date().getFullYear() }} </span>
             <span>
-              <a href="https://github.com/lonelyion" target="_blank" rel="noreferrer">
-                {{ $t('site.footer.lonely_ion') }}
-              </a>
-            </span>
-            <span>
-              &
-              <a href="https://space.bilibili.com/314977548" target="_blank" rel="noreferrer">
-                {{ $t('site.footer.oruyanke') }}
+              <a href="https://github.com/FOOLISH06" target="_blank" rel="noreferrer">
+                {{ $t('site.footer.FOOLISH06') }}
               </a>
             </span>
             <v-btn
               icon
-              href="https://github.com/voosc/fubuki-button"
+              href="https://github.com/FOOLISH06/yousa-button"
               target="_blank"
               style="vertical-align: middle;"
               rel="noreferrer"
@@ -157,8 +101,7 @@
           <div>
             <p>{{ $t('site.footer.content') }}</p>
             <p v-if="$i18n.locale === 'zh'" style="font-size: 12px;">
-              <a href="https://icp.gov.moe" target="_blank" rel="noreferrer">萌ICP备 </a>
-              <a href="https://icp.gov.moe/?keyword=20201005" target="_blank" rel="noreferrer"> 20201005号</a>
+              <a href="https://beian.miit.gov.cn" target="_blank" rel="noreferrer"> 渝ICP备2021004776号</a>
             </p>
           </div>
         </div>
@@ -171,12 +114,6 @@
 <style lang="scss">
 $blur-function: blur(3px);
 .v-application {
-  html[lang='en'] & {
-    font-family: $en-body-fonts;
-  }
-  html[lang='ja'] & {
-    font-family: $ja-body-fonts;
-  }
   html[lang='zh'] & {
     font-family: $zh-body-fonts;
   }
@@ -260,25 +197,18 @@ export default {
       fixed: false,
       nav_items: [
         {
-          icon: '/img/youtube-fill.svg',
-          title: 'Youtube',
-          to: 'https://www.youtube.com/channel/UCdn5BQ06XqgXoAxIhbqw5Rg?sub_confirmation=1'
-        },
-        {
-          icon: '/img/twitter-fill.svg',
-          title: 'Twitter',
-          to: 'https://twitter.com/shirakamifubuki'
-        },
-        {
           icon: '/img/bilibili-fill.svg',
-          title: 'Bilibili',
-          to: 'https://space.bilibili.com/332704117'
-        }
-      ],
-      external_cn: [
+          title: '泠鸢yousa',
+          to: 'https://space.bilibili.com/282994'
+        },
         {
-          icon: 'alpha_b_box',
-          title: '御宅白狐的狐笋之林',
+          icon: '/img/weibo.svg',
+          title: '泠鸢yousa不是冷鸢',
+          to: 'https://weibo.com/lingyuanyousa'
+        },
+        {
+          icon: '/img/QQ.svg',
+          title: '泠鸢yousa的鸟蛋孵化基地',
           to: 'https://space.bilibili.com/314977548'
         }
       ]
@@ -303,11 +233,6 @@ export default {
     switch_dark() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
       this.$store.commit('SET_DARK', this.$vuetify.theme.dark);
-    },
-    switch_lang(lang) {
-      console.log('switching to ' + lang);
-      this.$store.commit('SET_LANG', lang);
-      this.$i18n.locale = lang;
     }
   },
   head() {

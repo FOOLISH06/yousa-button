@@ -13,35 +13,35 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'フブキボタン',
+    title: '冷鸟按钮',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: '白上フブキの音声ボタン 白上吹雪语音按钮 Voice button for Shirakami Fubuki'
+        content: '泠鸢yousa语音按钮 Voice button for yousa'
       },
       {
         hid: 'keywords',
         name: 'keywords',
         content:
-          'フブキボタン,FUBUKI BUTTON,狐按钮,hololive,Shirakami Fubuki,白上フブキ,白上吹雪,吹雪,小狐狸,屑狐狸,喵喵狐,语音按钮,ボイスボタン'
+          '泠鸢yousa,泠鸢,yousa,冷鸟'
       },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'フブキボタン' },
+      { hid: 'og:site_name', property: 'og:site_name', content: '冷鸟按钮' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: 'https://fubuki.moe' },
-      { hid: 'og:title', property: 'og:title', content: 'フブキボタン' },
+      { hid: 'og:url', property: 'og:url', content: 'http://foryousa.icu' },
+      { hid: 'og:title', property: 'og:title', content: '冷鸟按钮' },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: '新しい白上フブキのボイスボタン。私たちの目標は白上フブキの総合的なファンサイトを作ることです。'
+        content: '泠鸢yousa语音按钮，目标是打造一个收集泠鸢yousa整活语音的应援项目。'
       },
-      { hid: 'og:image', property: 'og:image', content: 'https://fubuki.moe/img/og_common.jpg' },
+      { hid: 'og:image', property: 'og:image', content: 'https://foryousa.icu/img/hanser-yousa.jpg' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@lonely_ion' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }]
   },
   /*
    ** Customize the progress-bar color
@@ -107,14 +107,14 @@ export default {
       start_url: '/?standalone=true'
     },
     workbox: {
-      runtimeCaching: [
-        {
-          urlPattern: 'https://cdn.jsdelivr.net/gh/voosc/fubuki-button@master/static/voices/*'
-        },
-        {
-          urlPattern: 'https://emoji.lonelyion.com/svg/*'
-        }
-      ]
+      // runtimeCaching: [
+      //   {
+      //     urlPattern: 'https://cdn.jsdelivr.net/gh/voosc/fubuki-button@master/static/voices/*'
+      //   },
+      //   {
+      //     urlPattern: 'https://emoji.lonelyion.com/svg/*'
+      //   }
+      // ]
     }
   },
   markdownit: {
@@ -126,7 +126,7 @@ export default {
   },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://fubuki.moe',
+    hostname: 'https://foryousa.icu',
     routes: [
       {
         url: '/',
@@ -163,37 +163,6 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
-      }
-    }
-  },
-  // This hook is designed for Fubuki-Button only
-  // Remove this code in other fork of button sites
-  hooks: {
-    generate: {
-      // eslint-disable-next-line no-unused-vars
-      done(generator) {
-        if (process.env.IS_VERCEL) {
-          const axios = require('axios').default;
-          const dayjs = require('dayjs');
-          const utc = require('dayjs/plugin/utc');
-          dayjs.extend(utc);
-
-          console.log('Started triggering actions, build time', dayjs.utc().format());
-          axios
-            .post(
-              'https://api.github.com/repos/voosc/fubuki-button/dispatches',
-              {
-                event_type: 'Vercel Build ' + dayjs.utc().format()
-              },
-              {
-                headers: {
-                  Accept: 'application/vnd.github.everest-preview+json',
-                  Authorization: 'token ' + process.env.GH_TOKEN
-                }
-              }
-            )
-            .then(r => console.log(r.statusText));
-        }
       }
     }
   }

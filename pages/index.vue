@@ -59,41 +59,11 @@
       </v-btn>
     </v-speed-dial>
     <v-flex xs12 sm8 md6>
-      <!-- 直播面板 -->
-      <v-card :loading="lives_loading">
-        <v-card-title>
-          <v-icon class="primary--text" :class="dark_text" style="margin-right: 8px;">
-            {{ icons.clock_outline }}
-          </v-icon>
-          {{ $t('live.activity') }}
-        </v-card-title>
-        <SkeletonLoading :loading="lives_loading">
-          <v-card-text>
-            <!-- 正在直播 -->
-            <div v-for="live in lives" :key="live.id">
-              <div v-if="live.title.length" :class="dark_text">
-                <span class="warning--text">{{ $t('live.on_air') }}</span>
-                <youtube-link :video-key="live.yt_video_key" :content="live.title" class="error--text" />
-              </div>
-            </div>
-            <!-- 计划中的直播 -->
-            <div v-for="live in upcoming_lives" :key="live.id">
-              <div v-if="live.title.length" :class="dark_text">
-                <span>{{ $t('live.schedule') + format_time(live.live_schedule) }}</span>
-                <youtube-link :video-key="live.yt_video_key" :content="live.title" />
-              </div>
-            </div>
-            <div v-if="lives.length === 0 && upcoming_lives.length === 0">
-              <p>{{ lives_loading ? $t('live.loading') : $t('live.no_schedule') }}</p>
-            </div>
-            <div class="notification-board" v-html="$md.render($t('live.notification'))"></div>
-          </v-card-text>
-        </SkeletonLoading>
-      </v-card>
+      <!-- done: 删除了直播面板 -->
       <!-- 对每个按钮组生成一个Card -->
       <v-card v-for="group in groups" :key="group.name">
         <v-card-title class="headline" :class="dark_text">
-          {{ group.group_description[current_locale] }}
+          {{ group.group_name }}
         </v-card-title>
         <v-card-text>
           <voice-btn
@@ -103,7 +73,7 @@
             :class="voice_button_color"
             @click.native="play(item)"
           >
-            {{ item.description[current_locale] }}
+            {{ item.name }}
           </voice-btn>
         </v-card-text>
       </v-card>
@@ -147,8 +117,6 @@ $nonlinear-transition: cubic-bezier(0.25, 0.8, 0.5, 1);
 import voice_lists from '~/assets/voices.json';
 import DevWarning from '../components/DevWarning';
 import VoiceBtn from '../components/VoiceBtn';
-import YoutubeLink from '../components/YoutubeLink';
-import SkeletonLoading from '../components/SkeletonLoading';
 import {
   mdiClockOutline,
   mdiClose,
@@ -162,10 +130,8 @@ import {
 
 export default {
   components: {
-    YoutubeLink,
     VoiceBtn,
-    DevWarning,
-    SkeletonLoading
+    DevWarning
   },
   data() {
     return {
@@ -192,9 +158,10 @@ export default {
   },
   computed: {
     voice_host() {
-      if (process.env.NODE_ENV === 'production')
-        return 'https://cdn.jsdelivr.net/gh/voosc/fubuki-button@master/static/voices/';
-      else return '/voices/';
+      // if (process.env.NODE_ENV === 'production')
+      //   return 'https://cdn.jsdelivr.net/gh/voosc/fubuki-button@master/static/voices/';
+      // else return '/voices/';
+      return '/voices/';
     },
     dark_text() {
       return {
@@ -276,7 +243,8 @@ export default {
           hitType: 'event',
           eventCategory: 'Audios',
           eventAction: 'play',
-          eventLabel: item.name + ' ' + item.description['zh']
+          // eventLabel: item.name + ' ' + item.description['zh']
+          eventLabel: item.name
         });
       }
     },
@@ -324,7 +292,7 @@ export default {
       audio.load(); //This could fix iOS playing bug
       if ('mediaSession' in navigator) {
         const metadata = {
-          title: this.overlap ? this.$t('control.overlap_title') : item.description[this.current_locale],
+          title: this.overlap ? this.$t('control.overlap_title') : item.name,
           artist: this.$t('control.full_name'),
           album: this.$t('site.title') + '(^・ω・^§)',
           artwork: [{ src: '/img/media-cover.jpg', sizes: '128x128', type: 'image/jpeg' }]
@@ -389,7 +357,7 @@ export default {
   head() {
     return {
       title: this.$t('site.title') + '(^・ω・^§)ﾉ',
-      link: [{ rel: 'canonical', href: 'https://fubuki.moe' }]
+      link: [{ rel: 'canonical', href: 'http://foryousa.icu' }]
     };
   }
 };
