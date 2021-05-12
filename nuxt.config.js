@@ -107,14 +107,11 @@ export default {
       start_url: '/?standalone=true'
     },
     workbox: {
-      // runtimeCaching: [
-      //   {
-      //     urlPattern: 'https://cdn.jsdelivr.net/gh/voosc/fubuki-button@master/static/voices/*'
-      //   },
-      //   {
-      //     urlPattern: 'https://emoji.lonelyion.com/svg/*'
-      //   }
-      // ]
+      runtimeCaching: [
+        {
+          urlPattern: 'https://cdn.jsdelivr.net/gh/FOOLISH06/yousa-button@master/static/voices/*'
+        }
+      ]
     }
   },
   markdownit: {

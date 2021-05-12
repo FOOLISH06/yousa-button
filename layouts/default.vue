@@ -205,11 +205,6 @@ export default {
           icon: '/img/weibo.svg',
           title: '泠鸢yousa不是冷鸢',
           to: 'https://weibo.com/lingyuanyousa'
-        },
-        {
-          icon: '/img/QQ.svg',
-          title: '泠鸢yousa的鸟蛋孵化基地',
-          to: 'https://space.bilibili.com/314977548'
         }
       ]
     };
