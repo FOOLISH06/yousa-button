@@ -1,8 +1,9 @@
 # 冷鸟按钮 / YOUSA-BUTTON
-网址在这里：[**冷鸟按钮**](http://foryousa.icu) 
+网址在这里：[**冷鸟按钮**](http://foryousa.icu)
 
-感谢 [lizi](https://github.com/lonelyion) 的代码，本项目是基于 lizi 的 [fubuki-button](https://github.com/lonelyion/
-material-vtuber-button) 修改而来，旨在打造一个 yousa 的语音分享平台，供广大鸟蛋娱乐之用（~~整活？不存在的~~） 
+GitHub 仓库：[Github](https://github.com/FOOLISH06/yousa-button.git)
+
+感谢 [lizi](https://github.com/lonelyion) 的代码，本项目是基于 lizi 的 [fubuki-button](https://github.com/lonelyion/material-vtuber-button.git)(现已删除，正在升级为模板) 修改而来，旨在打造一个 yousa 的语音分享平台，供广大鸟蛋娱乐之用（~~整活？不存在的~~） 
 <br><br>
 我只是做了一点点的修改工作，加上本人才疏学浅，难免会有一些修改得不到位的地方，还望大家谅解，遇到严重影响体验的bug可以联系我。   
 <br>
