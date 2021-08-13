@@ -7,12 +7,11 @@ GitHub 仓库：[Github](https://github.com/FOOLISH06/yousa-button.git)
 <br><br>
 我只是做了一点点的修改工作，加上本人才疏学浅，难免会有一些修改得不到位的地方，还望大家谅解，遇到严重影响体验的bug可以联系我。   
 <br>
-欢迎大家加入六哥的鸟蛋群（*非官方*）   
+欢迎大家加入鸟蛋群（*非官方*）   
 <img src="https://cdn.jsdelivr.net/gh/FOOLISH06/yousa-button@master/static/img/鸟蛋群.png">
 <br><br>
 
 ## TODO
-- 修改网页配色，初定为冷鸟的红白配色（需要其他学前端的同学的帮助，本人实在是直男审美）
 - 完善网站的音频和链接
 - 添加一些 yousa 的图标
 
@@ -43,8 +42,13 @@ GitHub 仓库：[Github](https://github.com/FOOLISH06/yousa-button.git)
 - GitHub [愚者](https://github.com/FOOLISH06)   
 
 音频：   
-- Bilibili [Kaze丶風男](https://space.bilibili.com/97374348/)  
+- Bilibili [Kaze丶風男](https://space.bilibili.com/97374348)  
 - Bilibili [愚者w](https://space.bilibili.com/499213967)  
+- Bilibili [流年如歌盛夏如梦](https://space.bilibili.com/248818076) 
+- Bilibili [泠儿来研磨鸢儿来写](https://space.bilibili.com/51630777)
+- Bilibili [秋叶伴思落](https://space.bilibili.com/88790703)
+- Bilibili [心纯如水](https://space.bilibili.com/505789935)
+- Bilibili [琴子゜](https://space.bilibili.com/14697354)
 
 
 
