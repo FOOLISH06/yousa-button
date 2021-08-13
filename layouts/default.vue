@@ -56,7 +56,7 @@
       app
     >
       <v-app-bar-nav-icon class="white--text" @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="$t('site.title') + '(^・ω・^§)ﾉ'" />
+      <v-toolbar-title v-text="$t('site.title') + '( •̀ ω •́ )'" />
       <v-img src="/img/hanser-yousa.jpg" style="max-width: 24px; margin-left: 6px;" />
       <v-spacer />
       <v-tooltip bottom>
