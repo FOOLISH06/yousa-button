@@ -3,7 +3,7 @@
 
 GitHub 仓库：[Github](https://github.com/FOOLISH06/yousa-button.git)
 
-感谢 [lizi](https://github.com/lonelyion) 的代码，本项目是基于 lizi 的 [fubuki-button](https://github.com/lonelyion/material-vtuber-button.git)(现已删除，正在升级为模板) 修改而来，旨在打造一个 yousa 的语音分享平台，供广大鸟蛋娱乐之用（~~整活？不存在的~~） 
+感谢 [离子](https://github.com/lonelyion) 的代码，本项目是基于离子的 [material-vtuber-button](https://github.com/lonelyion/material-vtuber-button.git) 修改而来，旨在打造一个 yousa 的语音分享平台，供广大鸟蛋娱乐之用（~~整活？不存在的~~） 
 <br><br>
 我只是做了一点点的修改工作，加上本人才疏学浅，难免会有一些修改得不到位的地方，还望大家谅解，遇到严重影响体验的bug可以联系我。   
 <br>
@@ -51,29 +51,8 @@ GitHub 仓库：[Github](https://github.com/FOOLISH06/yousa-button.git)
 - Bilibili [琴子゜](https://space.bilibili.com/14697354)
 
 
-
 ## 协议
 
 [MIT License](https://github.com/voosc/fubuki-button/blob/master/LICENSE)
 
 本项目为爱好者作品，和 泠鸢 yousa  官方没有关联
-
-## 支持
-
-### BrowserStack
-
-Proudly using BrowserStack.
-
-[![](https://i.loli.net/2017/09/27/59cbc16b0f8b4.png)](https://www.browserstack.com/)
-
-> **BrowserStack** is a cloud-based cross-browser testing tool that enables developers to test their websites across various browsers on different operating systems and mobile devices, without requiring users to install virtual machines, devices or emulators.
-
-### Vercel
-
-Powered by Vercel.
-
-[![vercel.png](https://i.loli.net/2020/07/18/rPah8FVmqBXL6dj.png)](https://www.vercel.com/?utm_source=oruyanke)
-
-> **​Vercel** is a cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It enables developers to host Jamstack websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.
-
-
